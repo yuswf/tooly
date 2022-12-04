@@ -8,6 +8,7 @@ import IconComponent from './Icon.component';
 import {setData} from '../stores/user';
 import getDiscordData from '../utils/getDiscordData';
 import StopWatchComponent from "./StopWatch.component";
+import {Toaster} from "react-hot-toast";
 
 function HomeComponent() {
     const dispatch = useDispatch();
@@ -25,6 +26,11 @@ function HomeComponent() {
 
     return (
         <div className="home-c">
+            <Toaster
+                position="bottom-center"
+                reverseOrder={false}
+            />
+
             <br/>
             {!fullScreenMode && <NavbarComponent data={data}/>}
             <ToolsComponent/>
@@ -33,21 +39,3 @@ function HomeComponent() {
 }
 
 export default HomeComponent;
-
-/*
-{
-    getGuilds ? getGuilds?.filter(guild => guild.id === process.env.mainServer).length === 1
-        ?
-        <div>
-            <h1 className="title">Welcome to the {data?.username}#{data?.discriminator} page!</h1>
-        </div>
-        :
-        <div>
-            yoksun gelsene amk
-            <br/>
-            <a target="_blank" href={process.env.inviteUrl}>katil amk</a>
-        </div>
-        :
-        <Skeleton width={15}/>
-}
-*/

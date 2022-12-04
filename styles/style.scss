@@ -41,6 +41,11 @@ html, body {
   }
 }
 
+.small-loader {
+  position: absolute;
+  animation: rotation 2s infinite linear;
+}
+
 .loader {
   position: absolute;
   top: 50%;
@@ -68,4 +73,15 @@ html, body {
     place-items: center;
     font-size: 26px;
   }
+}
+
+.titles {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.save-d {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }

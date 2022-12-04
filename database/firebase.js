@@ -49,4 +49,30 @@ export async function setToken(token) {
     }
 }
 
+export async function getRecords(id) {
+    const docRef = doc(db, 'records', id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        return docSnap.data();
+    }
+}
+
+export async function setRecords(id, arr) {
+    try {
+        if (!id || arr === []) return false;
+
+        // const {records} = await getRecords(id);
+
+        await setDoc(doc(db, 'records', id.toString()), {
+            records: arr,
+        });
+
+        return true;
+    } catch (e) {
+        console.log(e);
+        return false;
+    }
+}
+
 

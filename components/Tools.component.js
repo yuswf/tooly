@@ -100,7 +100,7 @@ function ToolsComponent() {
                                 key={index}>
                                 <a className="block p-3 rounded-lg">
                                     <div>
-                                        {item.name}
+                                        <span className="font-bold">{item.name}</span>
 
                                         <span className="float-right">
                                         {

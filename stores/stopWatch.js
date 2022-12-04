@@ -9,6 +9,7 @@ const initialState = {
     isRunning: false,
     lapTime: typeof window !== 'undefined' ? Number(window.localStorage.getItem('lapTime')) || 0 : 0,
     fullScreenMode: false,
+    myRecords: typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('records')) || [] : [],
 }
 
 export const stopWatchSlice = createSlice({
@@ -38,9 +39,12 @@ export const stopWatchSlice = createSlice({
         },
         setFullScreenMode: (state, action) => {
             state.fullScreenMode = action.payload;
+        },
+        setRecord: (state, action) => {
+            state.myRecords = [...state.myRecords, action.payload];
         }
     }
 });
 
-export const {setHours, setMinutes, setSeconds, setMilliseconds, setStartedTime, setIsRunning, setLapTime, setFullScreenMode} = stopWatchSlice.actions;
+export const {setHours, setMinutes, setSeconds, setMilliseconds, setStartedTime, setIsRunning, setLapTime, setFullScreenMode, setRecord} = stopWatchSlice.actions;
 export default stopWatchSlice.reducer;

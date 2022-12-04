@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import useSWR from 'swr';
+import {Toaster} from 'react-hot-toast';
 
 import {set, setGuilds} from '../stores/user';
 import {checkToken} from '../database/firebase';
