@@ -1,0 +1,71 @@
+$bg-color: #0a0a0b;
+$text-color: #ffffff;
+$c: #093a5b;
+
+html, body {
+  background: $bg-color;
+  color: $text-color;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.main {
+  & .login-c {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & .login-b {
+    transition: .1s ease-in-out background-color;
+
+    &:hover {
+      background-color: $bg-color;
+    }
+  }
+
+  & .navbar-c {
+
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotation 2s infinite linear;
+}
+
+.links {
+  transition: .1s ease-in-out background-color;
+
+  &:hover {
+    background-color: $bg-color;
+  }
+}
+
+.parentFs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+
+  & button {
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+  }
+}

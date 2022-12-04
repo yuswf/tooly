@@ -1,0 +1,56 @@
+html, body {
+  background: #0a0a0b;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.main .login-c {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main .login-b {
+  transition: 0.1s ease-in-out background-color;
+}
+.main .login-b:hover {
+  background-color: #0a0a0b;
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotation 2s infinite linear;
+}
+
+.links {
+  transition: 0.1s ease-in-out background-color;
+}
+.links:hover {
+  background-color: #0a0a0b;
+}
+
+.parentFs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+.parentFs button {
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+}
+
+/*# sourceMappingURL=style.css.map */
