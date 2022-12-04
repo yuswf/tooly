@@ -287,7 +287,7 @@ function StopWatchComponent() {
                     </div>
                     :
                     <div className="flex justify-center mt-5">
-                        If you join our <a href={process.env.inviteUrl} target="_blank"
+                        If you join our <a href={process.env.inviteUrl}
                                            className="font-bold text-[#5865F2]">Discord</a> server, you can save your times to the
                         Discord.
                     </div>
