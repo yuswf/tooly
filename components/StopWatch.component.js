@@ -288,9 +288,11 @@ function StopWatchComponent() {
                                 <button disabled={true} //Records.length === 0 || saving
                                         className="disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary mr-2"
                                         onClick={saveToDB}>
+                                    <span className="mr-1"><IconComponent icon="locked" size={16} color="gold"/></span>
                                     {saving ? <span className="small-loader"><IconComponent icon="loader" size={32}
                                                                                             color="#5865F2"/></span> : <>Save
-                                        to <span className="inline-block font-bold text-[#5865F2]">Discord</span></>}
+                                        to <span className="inline-block font-bold text-[#5865F2]">Discord</span>
+                                    </>}
                                 </button>
                             </div>
                             :

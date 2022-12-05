@@ -1,14 +1,14 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {io} from 'socket.io-client';
 
 import NavbarComponent from './Navbar.component';
 import ToolsComponent from './Tools.component';
-import IconComponent from './Icon.component';
 
 import {setData} from '../stores/user';
 import getDiscordData from '../utils/getDiscordData';
-import StopWatchComponent from "./StopWatch.component";
 import {Toaster} from "react-hot-toast";
+import LoaderComponent from './Loader.component';
 
 function HomeComponent() {
     const dispatch = useDispatch();
@@ -24,16 +24,31 @@ function HomeComponent() {
         getUserData();
     }, [user]);
 
+    useEffect(() => {
+        if (process.env.bannedUsers.includes(data.id)) {
+            localStorage.removeItem('token')
+            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        }
+    }, [data]);
+
     return (
         <div className="home-c">
-            <Toaster
-                position="bottom-center"
-                reverseOrder={false}
-            />
+            {data.id &&
+                (
+                    <>
+                        <Toaster
+                            position="bottom-center"
+                            reverseOrder={false}
+                        />
 
-            <br/>
-            {!fullScreenMode && <NavbarComponent data={data}/>}
-            <ToolsComponent/>
+                        <br/>
+                        {!fullScreenMode && <NavbarComponent data={data}/>}
+                        <ToolsComponent/>
+                    </>
+                )
+                ||
+                <LoaderComponent color="#5865F2" />
+            }
         </div>
     )
 }
