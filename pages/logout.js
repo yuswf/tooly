@@ -15,6 +15,8 @@ function Logout() {
 
         setTimeout(() => {
             localStorage.removeItem('token');
+            localStorage.removeItem('records');
+            localStorage.removeItem('lapTime');
             dispatch(set(''));
             dispatch(setData({}));
 

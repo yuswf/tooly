@@ -225,7 +225,7 @@ function StopWatchComponent() {
                         onClick={reset}>Reset
                 </button>
 
-                <button disabled={!isRunning && !(milliseconds > 0)}
+                <button disabled={Records.length !== 0 ? timeToMs(hours, minutes, seconds, milliseconds) - Records[Records?.length - 1]?.ms < 1000 : true && !isRunning && !(milliseconds > 0)}
                         className={`disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary`}
                         onClick={save}>Save
                 </button>
@@ -285,7 +285,7 @@ function StopWatchComponent() {
                     {getGuilds ? getGuilds?.filter(guild => guild.id === process.env.mainServer).length === 1
                             ?
                             <div className={`flex justify-center mt-5`}>
-                                <button disabled={Records.length === 0 || saving}
+                                <button disabled={true} //Records.length === 0 || saving
                                         className="disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary mr-2"
                                         onClick={saveToDB}>
                                     {saving ? <span className="small-loader"><IconComponent icon="loader" size={32}
