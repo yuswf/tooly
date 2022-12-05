@@ -5,11 +5,11 @@ function Document() {
         <Html>
             <Head>
                 <meta charSet="UTF-8"/>
-                <meta name="description" content="cool description"/>
+                <meta name="description" content="The tools for study/your daily life and more."/>
                 <meta name="keywords" content="study app, stop-watcher, timer"/>
                 <meta name="author" content="yusu#0909"/>
 
-                <title>cool title</title>
+                <title>Tooly</title>
             </Head>
             <body>
             <Main/>
