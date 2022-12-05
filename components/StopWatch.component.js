@@ -249,52 +249,65 @@ function StopWatchComponent() {
                 }
             </div>
 
-            <div className="rounded save-d mt-10 bg-[#1f2024] p-4 px-10 py-8">
-                {Records.length > 0 ? (
-                    <div className="flex mb-5 justify-between">
-                        <div>
-                            <h1 className="text-[#00FFFF] opacity-75 titles flex">Time</h1>
+            {!fullScreenMode && (
+                <div className="rounded save-d mt-10 bg-[#1f2024] p-4 px-10 py-8">
+                    {Records.length > 0 ? (
+                        <div className="flex mb-5 justify-between">
+                            <div>
+                                <h1 className="text-[#00FFFF] opacity-75 titles flex">Time</h1>
+                            </div>
+                            <div>
+                                <h1 className="text-[#00FFFF] opacity-75 titles flex">Lap Time</h1>
+                            </div>
                         </div>
-                        <div>
-                            <h1 className="text-[#00FFFF] opacity-75 titles flex">Lap Time</h1>
+                    ) : (
+                        <div className="font-bold flex justify-center">
+                            Not saved yet.
                         </div>
-                    </div>
-                ) : (
-                    <div className="font-bold flex justify-center">
-                        Not saved yet.
-                    </div>
-                )}
+                    )}
 
-                {Records.map((item, index) => (
-                    <div key={index} className="flex justify-between">
-                        <div className="flex">
-                            <span className="">{item.time}</span>
-                        </div>
-                        <span className="">
+                    {Records.map((item, index) => (
+                        <div key={index} className="flex justify-between">
+                            <div className="flex">
+                                <span className="">{item.time}</span>
+                            </div>
+                            <span className="">
                             {msToTime(index === 0 ? item.ms : item.ms - Records[index - 1].ms)} <span
-                            className="cursor-pointer" onClick={() => removeRecord(item, index)}><IconComponent
-                            size={12} color="#5865F2" icon="cancel"/></span>
+                                className="cursor-pointer" onClick={() => removeRecord(item, index)}><IconComponent
+                                size={12} color="#5865F2" icon="cancel"/></span>
                         </span>
-                    </div>
-                ))}
-            </div>
-            {getGuilds ? getGuilds?.filter(guild => guild.id === process.env.mainServer).length === 1
-                    ?
-                    <div className={`flex justify-center mt-5`}>
-                        <button disabled={Records.length === 0 || saving} className="disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary mr-2" onClick={saveToDB}>
-                            {saving ? <span className="small-loader"><IconComponent icon="loader" size={32} color="#5865F2" /></span> : <>Save to <span className="inline-block font-bold text-[#5865F2]">Discord</span></>}
-                        </button>
-                    </div>
-                    :
-                    <div className="flex justify-center mt-5">
-                        If you join our <a href={process.env.inviteUrl} target="_blank"
-                                           className="font-bold text-[#5865F2]">Discord</a> server, you can save your times to the
-                        Discord.
-                    </div>
-                :
-                <div className="flex justify-center mt-5">
-                    <Skeleton width={142} height={48} />
-                </div>}
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            {!fullScreenMode && (
+                <>
+                    {getGuilds ? getGuilds?.filter(guild => guild.id === process.env.mainServer).length === 1
+                            ?
+                            <div className={`flex justify-center mt-5`}>
+                                <button disabled={Records.length === 0 || saving}
+                                        className="disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary mr-2"
+                                        onClick={saveToDB}>
+                                    {saving ? <span className="small-loader"><IconComponent icon="loader" size={32}
+                                                                                            color="#5865F2"/></span> : <>Save
+                                        to <span className="inline-block font-bold text-[#5865F2]">Discord</span></>}
+                                </button>
+                            </div>
+                            :
+                            <div className="flex justify-center mt-5">
+                                If you join our <a href={process.env.inviteUrl}
+                                                   className="font-bold text-[#5865F2]">Discord</a> server, you can save
+                                your times
+                                to the
+                                Discord.
+                            </div>
+                        :
+                        <div className="flex justify-center mt-5">
+                            <Skeleton width={142} height={48}/>
+                        </div>}
+                </>
+            )}
         </div>
     )
 }

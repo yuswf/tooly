@@ -71,6 +71,13 @@ html, body {
   & button {
     display: grid;
     place-items: center;
+
+    @media (max-width: 768px) {
+      & {
+        font-size: 15px;
+      }
+    }
+
     font-size: 26px;
   }
 }

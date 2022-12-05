@@ -57,6 +57,11 @@ html, body {
   place-items: center;
   font-size: 26px;
 }
+@media (max-width: 768px) {
+  .parentFs button {
+    font-size: 15px;
+  }
+}
 
 .titles {
   font-size: 18px;
