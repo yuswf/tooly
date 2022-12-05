@@ -4,15 +4,14 @@ import {Toaster} from 'react-hot-toast';
 import {io} from 'socket.io-client';
 
 import NavbarComponent from './Navbar.component';
-
 import ToolsComponent from './Tools.component';
-import {setData} from '../stores/user';
+import {setData, setOnlineUser} from '../stores/user';
 import getDiscordData from '../utils/getDiscordData';
 import LoaderComponent from './Loader.component';
 
 function HomeComponent() {
     const dispatch = useDispatch();
-    const {user: {user, data}, stopWatch: {fullScreenMode}} = useSelector(state => state);
+    const {user: {user, data, onlineUsers}, stopWatch: {fullScreenMode}} = useSelector(state => state);
 
     const getUserData = async () => {
         const userData = await getDiscordData(user);
@@ -25,11 +24,30 @@ function HomeComponent() {
     }, [user]);
 
     useEffect(() => {
+
         if (process.env.bannedUsers.includes(data.id)) {
             localStorage.removeItem('token')
             window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
         }
-    }, [data]);
+    }, [data !== {}]);
+
+    useEffect(() => {
+        const socketInitializer = async () => {
+            const socket = io('http://localhost:3000', {
+                auth: {
+                    token: data.username + '#' + data.discriminator
+                }
+            });
+
+            socket.on("connect", () => {});
+
+            socket.on("message", (data) => {
+                dispatch(setOnlineUser(data));
+            });
+        }
+
+        socketInitializer();
+    });
 
     return (
         <div className="home-c">
@@ -47,7 +65,7 @@ function HomeComponent() {
                     </>
                 )
                 ||
-                <LoaderComponent color="#5865F2" />
+                <LoaderComponent color="#5865F2"/>
             }
         </div>
     )

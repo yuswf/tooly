@@ -27,6 +27,7 @@ function StopWatchComponent() {
         user: {
             data,
             getGuilds,
+            onlineUsers: {users},
         },
         stopWatch: {
             hours,
@@ -307,6 +308,18 @@ function StopWatchComponent() {
                         <div className="flex justify-center mt-5">
                             <Skeleton width={142} height={48}/>
                         </div>}
+
+                    {users && (
+                        <div>
+                            {users.map((user, index) => (
+                                <div key={index} className="flex justify-center mt-5">
+                                    <div className="flex items-center">
+                                        {user}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ) || <Skeleton width={100} />}
                 </>
             )}
         </div>

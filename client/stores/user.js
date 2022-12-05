@@ -4,6 +4,7 @@ const initialState = {
     user: '',
     data: {},
     getGuilds: [],
+    onlineUsers: [],
 };
 
 export const userSlice = createSlice({
@@ -18,9 +19,12 @@ export const userSlice = createSlice({
         },
         setGuilds: (state, action) => {
             state.getGuilds = action.payload;
-        }
+        },
+        setOnlineUser: (state, action) => {
+            state.onlineUsers = action.payload;
+        },
     },
 });
 
-export const {set, setData, setGuilds} = userSlice.actions;
+export const {set, setData, setGuilds, setOnlineUser} = userSlice.actions;
 export default userSlice.reducer;
