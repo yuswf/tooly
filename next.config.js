@@ -7,7 +7,7 @@ const nextConfig = {
         authorization: 'https://discord.com/api/oauth2/authorize',
         clientId: '1047608935500218499',
         clientSecret: 'v4t42xuN2tITFmWNYA1awKldUDEukOSm',
-        redirectUri: 'https://toooly.vercel.app/api/callback',
+        redirectUri: 'https://toooly.vercel.app/api/callback', // http://localhost/api/callback
         token: 'MTA0NzYwODkzNTUwMDIxODQ5OQ.Go-IND.je6PHS8GkqP2kq2qTHmItrWh3Yxe3nP9t0Emu4',
         apiEndPoint: 'https://discord.com/api/v10',
         avatarBase: 'https://cdn.discordapp.com/avatars',

@@ -1,7 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import useSWR from 'swr';
-import {Toaster} from 'react-hot-toast';
 
 import {set, setGuilds} from '../stores/user';
 import {checkToken} from '../database/firebase';
@@ -16,7 +15,7 @@ function Home() {
     const fetcher = url => fetch(url, {
         method: 'GET',
         headers: {
-            Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
         }
     }).then(r => r.json());
     const {data: Data} = useSWR(user !== '' && user !== null && user !== false ? process.env.apiEndPoint + '/users/@me/guilds?limit=200' : null, fetcher);
@@ -26,15 +25,15 @@ function Home() {
     }
 
     useEffect(() => {
-        if (sessionStorage.getItem('token')) {
-            checkToken(sessionStorage.getItem('token'))
+        if (localStorage.getItem('token')) {
+            checkToken(localStorage.getItem('token'))
                 .then((result) => {
                     if (!result) {
                         dispatch(set(false));
-                        sessionStorage.removeItem('token');
+                        localStorage.removeItem('token');
                     }
 
-                    dispatch(set(sessionStorage.getItem('token')));
+                    dispatch(set(localStorage.getItem('token')));
                 });
         } else {
             dispatch(set(false));

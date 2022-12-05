@@ -13,7 +13,7 @@ function Check() {
             checkToken(token)
                 .then((result) => {
                     if (result) {
-                        sessionStorage.setItem('token', token.toString());
+                        localStorage.setItem('token', token.toString());
 
                         router.push('/');
                     } else {

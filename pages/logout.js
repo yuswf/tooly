@@ -11,10 +11,10 @@ function Logout() {
     const router = useRouter();
 
     useEffect(() => {
-        if (!sessionStorage.getItem('token')) return () => router.push('/');
+        if (!localStorage.getItem('token')) return () => router.push('/');
 
         setTimeout(() => {
-            sessionStorage.removeItem('token');
+            localStorage.removeItem('token');
             dispatch(set(''));
             dispatch(setData({}));
 
