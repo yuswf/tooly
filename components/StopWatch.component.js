@@ -50,7 +50,6 @@ function StopWatchComponent() {
             if (e.code === 'Space') {
                 setTimeout(() => {
                     dispatch(setIsRunning(!isRunning));
-
                     if (isRunning) {
                         stop();
                     } else {

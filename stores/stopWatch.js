@@ -7,7 +7,7 @@ const initialState = {
     milliseconds: 0,
     startedTime: null,
     isRunning: false,
-    lapTime: typeof window !== 'undefined' ? Number(window.localStorage.getItem('lapTime')) || 0 : 0,
+    lapTime: typeof window !== 'undefined' ? window.localStorage.getItem('lapTime') || 0 : 0,
     fullScreenMode: false,
     myRecords: typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('records')) || [] : [],
 }

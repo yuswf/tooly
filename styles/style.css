@@ -71,7 +71,15 @@ html, body {
 .save-d {
   max-height: 300px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+  scrollbar-color: #093a5b;
+}
+.save-d::-webkit-scrollbar-thumb {
+  background: #093a5b;
+  border-radius: 10px;
+}
+.save-d::-webkit-scrollbar {
+  width: 3px;
 }
 
 /*# sourceMappingURL=style.css.map */
