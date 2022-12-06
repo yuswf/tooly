@@ -10,7 +10,7 @@ const users = new Map();
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: "*",
+        origin: "https://toooly.vercel.app",
     }
 });
 
