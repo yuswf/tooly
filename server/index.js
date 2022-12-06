@@ -11,7 +11,7 @@ const server = app.listen(config.port, () => {
 /*
 const io = require('socket.io')(server, {
     cors: {
-        origin: "*",
+        origin: "https://toooly.vercel.app",
     }
 });
 */
