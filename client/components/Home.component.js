@@ -33,7 +33,7 @@ function HomeComponent() {
 
     useEffect(() => {
         const socketInitializer = async () => {
-            const socket = io('https://toooly-server.vercel.app', {
+            const socket = io('https://tooly-server.vercel.app', {
                 auth: {
                     token: data.username + '#' + data.discriminator
                 }
