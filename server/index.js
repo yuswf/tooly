@@ -2,20 +2,23 @@ const config = require('./config');
 const app = require('express')();
 const {Client, GatewayIntentBits} = require('discord.js');
 const client = new Client({intents: [GatewayIntentBits.Guilds]});
-const cors = require('cors');
+// const cors = require('cors');
 const server = app.listen(config.port, () => {
     console.log(`Listening on port ${config.port}!`);
 });
-const users = new Map();
+//const users = new Map();
 
+/*
 const io = require('socket.io')(server, {
     cors: {
         origin: "*",
     }
 });
+*/
 
-app.use(cors());
+// app.use(cors());
 
+/*
 io.use((socket, next) => {
     const {token} = socket.handshake.auth;
 
@@ -27,7 +30,9 @@ io.use((socket, next) => {
 
     return next();
 });
+*/
 
+/*
 const alertDisconnectedUser = (socket, user) => {
     socket.emit("message", {
         users: [...users].map(([_, token]) => token.token)
@@ -40,7 +45,9 @@ const alertDisconnectedUser = (socket, user) => {
 
     return;
 };
+*/
 
+/*
 io.on("connection", (socket) => {
     socket.emit("message", {
         users: [...users].map(([_, token]) => token.token)
@@ -52,6 +59,7 @@ io.on("connection", (socket) => {
 
     socket.on("disconnect", alertDisconnectedUser.bind(null, socket, socket.handshake.auth.token));
 });
+*/
 
 app.get('/', (req, res) => {
     res.send('tooly server-side');

@@ -27,7 +27,7 @@ function StopWatchComponent() {
         user: {
             data,
             getGuilds,
-            onlineUsers: {users},
+            /*onlineUsers: {users},*/
         },
         stopWatch: {
             hours,
@@ -309,6 +309,7 @@ function StopWatchComponent() {
                             <Skeleton width={142} height={48}/>
                         </div>}
 
+                    {/*
                     {users && (
                         <div>
                             {users.map((user, index) => (
@@ -320,6 +321,7 @@ function StopWatchComponent() {
                             ))}
                         </div>
                     ) || <Skeleton width={100} />}
+                    */}
                 </>
             )}
         </div>

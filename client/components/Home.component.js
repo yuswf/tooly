@@ -1,17 +1,17 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Toaster} from 'react-hot-toast';
-import {io} from 'socket.io-client';
+// import {io} from 'socket.io-client';
 
 import NavbarComponent from './Navbar.component';
 import ToolsComponent from './Tools.component';
-import {setData, setOnlineUser} from '../stores/user';
+import {setData, /*setOnlineUser*/} from '../stores/user';
 import getDiscordData from '../utils/getDiscordData';
 import LoaderComponent from './Loader.component';
 
 function HomeComponent() {
     const dispatch = useDispatch();
-    const {user: {user, data, onlineUsers}, stopWatch: {fullScreenMode}} = useSelector(state => state);
+    const {user: {user, data, /*onlineUsers*/}, stopWatch: {fullScreenMode}} = useSelector(state => state);
 
     const getUserData = async () => {
         const userData = await getDiscordData(user);
@@ -24,13 +24,13 @@ function HomeComponent() {
     }, [user]);
 
     useEffect(() => {
-
         if (process.env.bannedUsers.includes(data.id)) {
             localStorage.removeItem('token')
             window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
         }
     }, [data !== {}]);
 
+    /*
     useEffect(() => {
         const socketInitializer = async () => {
             const socket = io('https://toooly-server.vercel.app', {
@@ -48,6 +48,7 @@ function HomeComponent() {
 
         socketInitializer();
     });
+    */
 
     return (
         <div className="home-c">
