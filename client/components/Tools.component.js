@@ -8,7 +8,7 @@ import PomodoroComponent from './Pomodoro.component';
 import InvestmentComponent from './Investment.component';
 
 function ToolsComponent() {
-    const {user: {data}, stopWatch: {fullScreenMode, isRunning}} = useSelector(state => state);
+    const {user: {data}, manuelTimer: {isRunning: ManuelTimerIsRunning}, stopWatch: {fullScreenMode, isRunning: StopwatchIsRunning}} = useSelector(state => state);
 
     const perms = [
         {
@@ -95,8 +95,8 @@ function ToolsComponent() {
                     <ul className="grid grid-cols-2 gap-2">
                         {tools.map((item, index) => (
                             <li
-                                onClick={() => check(item) ? '' : isRunning ? '' : toolViewer(index)}
-                                className={`${check(item) ? 'bg-[#1f2024] bg-opacity-25 cursor-not-allowed' : index !== i && isRunning ? 'bg-[#1f2024] bg-opacity-25 cursor-not-allowed' : `${index === i ? 'bg-[#093a5b]' : 'bg-[#1f2024] bg-opacity-55'} cursor-pointer`} transition rounded`}
+                                onClick={() => check(item) ? '' : ManuelTimerIsRunning || StopwatchIsRunning ? '' : toolViewer(index)}
+                                className={`${check(item) ? 'bg-[#1f2024] bg-opacity-25 cursor-not-allowed' : index !== i && (ManuelTimerIsRunning || StopwatchIsRunning) ? 'bg-[#1f2024] bg-opacity-25 cursor-not-allowed' :  `${index === i ? 'bg-[#093a5b]' : 'bg-[#1f2024] bg-opacity-55'} cursor-pointer`} transition rounded`}
                                 key={index}>
                                 <a className="block p-3 rounded-lg">
                                     <div>

@@ -1,11 +1,15 @@
 import {useEffect, useState} from 'react';
 import toast from 'react-hot-toast';
+import {useDispatch, useSelector} from 'react-redux';
+
+import {setIsRunning} from '../stores/ManuelTimer';
 
 function ManuelSetTimerComponent() {
+    const dispatch = useDispatch();
+    const {isRunning} = useSelector(state => state.manuelTimer);
     const [hours, setHours] = useState(0);
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(5);
-    const [isRunning, setIsRunning] = useState(false);
     const [ms, setMs] = useState(localStorage.getItem('remainingTime') || 0);
     const [Seconds, SetSeconds] = useState(seconds);
     const [Minutes, SetMinutes] = useState(minutes);
@@ -31,7 +35,7 @@ function ManuelSetTimerComponent() {
         if (ms < 0) {
             toast.success('Time is up!');
             play();
-            setIsRunning(false);
+            dispatch(setIsRunning(false));
             setHours(hours);
             setMinutes(minutes);
             setSeconds(seconds);
@@ -67,26 +71,27 @@ function ManuelSetTimerComponent() {
 
     const start = () => {
         if (ms > 0) {
-            setIsRunning(true);
+            dispatch(setIsRunning(true));
         }
     }
 
     const stop = () => {
         if (isRunning) {
-            setIsRunning(false);
+            dispatch(setIsRunning(false));
             clearInterval(interval);
             interval = null;
         }
     }
 
     const cancel = () => {
-        setIsRunning(false);
+        dispatch(setIsRunning(false));
         clearInterval(interval);
         interval = null;
         setHours(0);
         setMinutes(0);
         setSeconds(5);
         setMs(0);
+        localStorage.removeItem('remainingTime');
     }
 
     return (
