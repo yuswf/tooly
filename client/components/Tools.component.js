@@ -47,7 +47,7 @@ function ToolsComponent() {
             name: 'Timer',
             component: <TimerComponent/>,
             description: 'A simple timer to time your tasks.',
-            perm: 3,
+            perm: -1,
         },
         {
             name: 'Stopwatch',

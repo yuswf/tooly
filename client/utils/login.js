@@ -3,7 +3,7 @@ function login(router) {
         'identify',
         'email',
         'guilds',
-        'guilds.join'
+        //'guilds.join'
     ];
     const uri = process.env.authorization + '?' +
         'response_type=code' +

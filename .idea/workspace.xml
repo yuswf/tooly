@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/archive/archive-timer.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/ManuelSetTimer.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/QuickTimer.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/UsersTimer.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/timer-finish-sound-1.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/stores/ManuelTimer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/StopWatch.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/StopWatch.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Timer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Timer.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Tools.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Tools.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/stores/Timer.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/stores/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/stores/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/stores/stopWatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/stores/StopWatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/utils/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/utils/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +77,7 @@
       <workItem from="1670521494157" duration="2023000" />
       <workItem from="1670532973008" duration="1826000" />
       <workItem from="1670596260740" duration="54000" />
-      <workItem from="1670596330039" duration="22157000" />
+      <workItem from="1670596330039" duration="22523000" />
     </task>
     <servers />
   </component>
