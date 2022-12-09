@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/stores/Timer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/archive/getUserData.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/archive/getUserData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/archive/joinGuild.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/archive/joinGuild.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/archive/socket-home.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/archive/socket-home.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components/StopWatch.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/StopWatch.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Timer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Timer.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Tools.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Tools.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/stores/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/stores/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/stores/stopWatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/stores/stopWatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +71,7 @@
       <workItem from="1670521494157" duration="2023000" />
       <workItem from="1670532973008" duration="1826000" />
       <workItem from="1670596260740" duration="54000" />
-      <workItem from="1670596330039" duration="4798000" />
+      <workItem from="1670596330039" duration="5168000" />
     </task>
     <servers />
   </component>

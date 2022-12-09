@@ -168,10 +168,9 @@ function StopWatchComponent() {
                 return ' ' + h + ':' + m + ':' + s + ' ';
             }
 
-            const date = new Date();
             // const time = `${date.getHours() < 10 ? '0' + date.getHours() : date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}:${date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()}`;
             // const time = msToTime(Date.now());
-            const time = '00:00:00';
+            const time = timenow();
 
             // const lap = `${hours}:${minutes}:${seconds}:${milliseconds}`;
             // const data = {
