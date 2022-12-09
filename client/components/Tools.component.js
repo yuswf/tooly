@@ -80,12 +80,12 @@ function ToolsComponent() {
     }
 
     const check = (item) => {
-        return item.perm > 0 && !process.env.admins.includes(data.id)
+        return item.perm > 0 && !process.env.admins.includes(data.id);
     }
 
     const getIcon = (item) => {
-        return <IconComponent color={perms.filter(perm => perm.perm === item.perm)[0].color}
-                              icon={perms.filter(perm => perm.perm === item.perm)[0].access} size={16}/>;
+        return <IconComponent color={perms.filter(perm => perm.perm === item.perm)[0]?.color}
+                              icon={perms.filter(perm => perm.perm === item.perm)[0]?.access} size={16}/>;
     }
 
     return (

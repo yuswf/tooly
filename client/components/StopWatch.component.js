@@ -15,7 +15,7 @@ import {
     setLapTime,
     setFullScreenMode,
     setRecord
-} from '../stores/stopWatch';
+} from '../stores/StopWatch';
 import {
     setRecords as setRecordsToDatabase,
 } from '../database/firebase';
