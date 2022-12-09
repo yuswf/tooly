@@ -6,7 +6,7 @@ import {set, setGuilds} from '../stores/user';
 import {checkToken} from '../database/firebase';
 import LoginComponent from '../components/Login.component';
 import LoaderComponent from '../components/Loader.component';
-import SocketHomeComponent from '../archive/socket-home.component';
+import HomeComponent from '../components/Home.component';
 
 function Home() {
     const dispatch = useDispatch();
@@ -41,7 +41,7 @@ function Home() {
     }, []);
 
     if (user !== '' && user !== null && user !== false) {
-        return <SocketHomeComponent/>
+        return <HomeComponent />
     } else {
         return (
             <div className="main">

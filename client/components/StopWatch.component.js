@@ -40,7 +40,6 @@ function StopWatchComponent() {
             myRecords,
         }
     } = useSelector(state => state);
-    const [Records, setRecords] = useState([]);
     const [saving, setSaving] = useState(false);
     let interval;
 
@@ -74,7 +73,7 @@ function StopWatchComponent() {
     }, [isRunning]);
 
     useEffect(() => {
-        setRecords(myRecords);
+        dispatch(setRecord(JSON.parse(localStorage.getItem('records')) || []));
         // startStopWatch();
 
         if (lapTime > 0) {
@@ -160,8 +159,20 @@ function StopWatchComponent() {
 
     const save = () => {
         if (lapTime > 0) {
+            function timenow() {
+                var now = new Date().toLocaleString('tr-TR').split(' ')[1],
+                    h = now.split(':')[0],
+                    m = now.split(':')[1],
+                    s = now.split(':')[2];
+
+                return ' ' + h + ':' + m + ':' + s + ' ';
+            }
+
             const date = new Date();
-            const time = `${date.getHours() < 10 ? '0' + date.getHours() : date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}:${date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()}`;
+            // const time = `${date.getHours() < 10 ? '0' + date.getHours() : date.getHours()}:${date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()}:${date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()}`;
+            // const time = msToTime(Date.now());
+            const time = '00:00:00';
+
             // const lap = `${hours}:${minutes}:${seconds}:${milliseconds}`;
             // const data = {
             //    time,
@@ -174,16 +185,19 @@ function StopWatchComponent() {
                 ms: timeToMs(hours, minutes, seconds, milliseconds)
             }
 
-            const records = [...Records, dataString];
-            setRecords(records);
+            const records = [...myRecords, dataString];
             dispatch(setRecord(records));
             localStorage.setItem('records', JSON.stringify(records));
         }
     }
 
     const removeRecord = (item, index) => {
-        const newRecords = Records.filter((record, i) => i !== index);
-        setRecords(newRecords);
+        if (myRecords.length === 1) {
+            dispatch(setRecord([]));
+            return localStorage.removeItem('records');
+        }
+
+        const newRecords = myRecords.filter((record, i) => i !== index);
         dispatch(setRecord(newRecords));
         localStorage.setItem('records', JSON.stringify(newRecords));
     }
@@ -192,7 +206,7 @@ function StopWatchComponent() {
         setSaving(true);
         if (saving) return;
 
-        if (await setRecordsToDatabase(data.id, Records) && !(await sendToUser(data.id, Records, msToTime)).message) {
+        if (await SetRecordsToDatabase(data.id, Records) && !(await sendToUser(data.id, Records, msToTime)).message) {
             toast.success('Records saved to database & Discord');
             setSaving(false);
         } else {
@@ -225,7 +239,7 @@ function StopWatchComponent() {
                         onClick={reset}>Reset
                 </button>
 
-                <button disabled={Records.length !== 0 ? timeToMs(hours, minutes, seconds, milliseconds) - Records[Records?.length - 1]?.ms < 1000 : true && !isRunning && !(milliseconds > 0)}
+                <button disabled={myRecords.length !== 0 ? timeToMs(hours, minutes, seconds, milliseconds) - myRecords[myRecords?.length - 1]?.ms < 1000 : true && !isRunning && !(milliseconds > 0)}
                         className={`disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary`}
                         onClick={save}>Save
                 </button>
@@ -249,8 +263,8 @@ function StopWatchComponent() {
             </div>
 
             {!fullScreenMode && (
-                <div className="rounded save-d mt-10 bg-[#1f2024] p-4 px-10 py-8">
-                    {Records.length > 0 ? (
+                <div className="rounded save-d mt-8 bg-[#1f2024] p-4 px-10 py-8">
+                    {myRecords.length > 0 ? (
                         <div className="flex mb-5 justify-between">
                             <div>
                                 <h1 className="text-[#00FFFF] opacity-75 titles flex">Time</h1>
@@ -265,13 +279,13 @@ function StopWatchComponent() {
                         </div>
                     )}
 
-                    {Records.map((item, index) => (
+                    {myRecords.length > 0 && myRecords.map((item, index) => (
                         <div key={index} className="flex justify-between">
                             <div className="flex">
                                 <span className="">{item.time}</span>
                             </div>
                             <span className="">
-                            {msToTime(index === 0 ? item.ms : item.ms - Records[index - 1].ms)} <span
+                            {msToTime(index === 0 ? item.ms : item.ms - myRecords[index - 1].ms)} <span
                                 className="cursor-pointer" onClick={() => removeRecord(item, index)}><IconComponent
                                 size={12} color="#5865F2" icon="cancel"/></span>
                         </span>
@@ -286,7 +300,7 @@ function StopWatchComponent() {
                             ?
                             <div className={`flex justify-center mt-5`}>
                                 <button disabled={true} //Records.length === 0 || saving
-                                        className="disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary mr-2"
+                                        className="disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 border border-[#5865f2] border-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary mr-2"
                                         onClick={saveToDB}>
                                     <span className="mr-1"><IconComponent icon="locked" size={16} color="gold"/></span>
                                     {saving ? <span className="small-loader"><IconComponent icon="loader" size={32}
@@ -307,8 +321,6 @@ function StopWatchComponent() {
                         <div className="flex justify-center mt-5">
                             <Skeleton width={142} height={48}/>
                         </div>}
-
-                    
                 </>
             )}
         </div>

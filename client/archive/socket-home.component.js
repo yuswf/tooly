@@ -85,5 +85,3 @@ function SocketHomeComponent() {
         </div>
     )
 }
-
-export default SocketHomeComponent;

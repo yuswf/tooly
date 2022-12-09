@@ -44,16 +44,16 @@ function ToolsComponent() {
     ]
     const tools = [
         {
-            name: 'Stopwatch',
-            component: <StopWatchComponent/>,
-            description: 'A simple stopwatch to time your tasks.',
-            perm: -1,
-        },
-        {
             name: 'Timer',
             component: <TimerComponent/>,
             description: 'A simple timer to time your tasks.',
             perm: 3,
+        },
+        {
+            name: 'Stopwatch',
+            component: <StopWatchComponent/>,
+            description: 'A simple stopwatch to time your tasks.',
+            perm: -1,
         },
         {
             name: 'Pomodoro',
@@ -69,8 +69,8 @@ function ToolsComponent() {
         },
     ];
 
-    const [component, setComponent] = useState(process.env.admins.includes(data.id) ? tools.filter(tool => tool.perm <= 0)[0]?.component || 'No tools available.' : tools[0].component);
-    const [i, setI] = useState(process.env.admins.includes(data.id) ? tools.findIndex(tool => tool.perm <= 0) : 0);
+    const [component, setComponent] = useState(!process.env.admins.includes(data.id) ? tools.filter(tool => tool.perm <= 0)[0]?.component || 'No tools available.' : tools[0].component);
+    const [i, setI] = useState(!process.env.admins.includes(data.id) ? tools.findIndex(tool => tool.perm <= 0) : 0);
 
     const toolViewer = (i) => {
         const component = tools[i].component;

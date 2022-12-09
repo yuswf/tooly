@@ -13,5 +13,3 @@ async function joinGuild(token, id) {
 
     console.log(data);
 }
-
-export default joinGuild;

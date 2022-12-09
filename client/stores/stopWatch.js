@@ -41,7 +41,7 @@ export const stopWatchSlice = createSlice({
             state.fullScreenMode = action.payload;
         },
         setRecord: (state, action) => {
-            state.myRecords = [...state.myRecords, action.payload];
+            state.myRecords = action.payload;
         }
     }
 });

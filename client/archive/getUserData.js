@@ -8,5 +8,3 @@ async function getUserData(token, id) {
 
     return await response.json();
 }
-
-export default getUserData;
