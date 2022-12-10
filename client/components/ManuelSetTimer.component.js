@@ -48,7 +48,6 @@ function ManuelSetTimerComponent() {
 
         const date = Math.floor(ms / 1000);
         const h = Math.floor(date / 3600) % 24;
-        console.log(h)
         const m = Math.floor(date / 60) % 60;
         const s = Math.floor(date % 60);
 
@@ -159,7 +158,7 @@ function ManuelSetTimerComponent() {
                 <>
                     <br/><br/>
                     <span
-                        className={`max-sm:text-4xl sm:text-3xl md:text-5xl ml-3.5 lg:text-5xl cursor-default stopwatch-s`}>
+                        className={`max-sm:ml-5 max-md:ml-10 max-lg:ml-3.5 lg:ml-3.5 max-sm:text-4xl sm:text-3xl md:text-5xl lg:text-5xl cursor-default stopwatch-s`}>
                         <h1 className={`inline text-bold sw-el p-4 rounded bg-[#1f2024] mr-2`}>{Hours < 10 ? `0${Hours}` : Hours}</h1>
                         <h1 className={`inline text-bold sw-el p-4 rounded bg-[#1f2024] mr-2`}>{Minutes < 10 ? `0${Minutes}` : Minutes}</h1>
                         <h1 className={`inline text-bold sw-el p-4 rounded bg-[#1f2024] mr-2`}>{Seconds < 10 ? `0${Seconds}` : Seconds}</h1>

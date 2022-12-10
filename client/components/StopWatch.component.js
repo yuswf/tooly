@@ -295,7 +295,7 @@ function StopWatchComponent() {
 
             {!fullScreenMode && (
                 <>
-                    {getGuilds ? getGuilds?.filter(guild => guild.id === process.env.mainServer).length === 1
+                    {getGuilds?.length > 0 ? getGuilds?.filter(guild => guild.id === process.env.mainServer).length === 1
                             ?
                             <div className={`flex justify-center mt-5`}>
                                 <button disabled={true} //Records.length === 0 || saving
@@ -309,12 +309,9 @@ function StopWatchComponent() {
                                 </button>
                             </div>
                             :
-                            <div className="flex justify-center mt-5">
-                                If you join our <a href={process.env.inviteUrl}
-                                                   className="font-bold text-[#5865F2]">Discord</a> server, you can save
-                                your times
-                                to the
-                                Discord.
+                            <div className="flex justify-center mt-8">
+                                Join our&nbsp;<a href={process.env.inviteUrl}
+                                                   className="font-bold text-[#5865F2]">Discord</a>&nbsp;Server
                             </div>
                         :
                         <div className="flex justify-center mt-5">
