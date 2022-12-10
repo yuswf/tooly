@@ -48,7 +48,7 @@ function ToolsComponent() {
             name: 'To-Do List',
             component: <ToDoListComponent/>,
             description: 'A simple to-do list.',
-            perm: 3,
+            perm: -1,
         },
         {
             name: 'Timer',
@@ -60,7 +60,7 @@ function ToolsComponent() {
             name: 'Stopwatch',
             component: <StopWatchComponent/>,
             description: 'A simple stopwatch to time your tasks.',
-            perm: -1,
+            perm: 0,
         },
         {
             name: 'Pomodoro',
