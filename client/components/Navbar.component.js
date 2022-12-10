@@ -11,6 +11,18 @@ function NavbarComponent({data}) {
     const [seconds, setSeconds] = useState(new Date().getSeconds());
 
     useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+    }, []);
+
+    const handleClickOutside = (event) => {
+        const path = event.path || (event.composedPath && event.composedPath());
+
+        if (!path.includes(document.getElementById('user-button')) && !path.includes(document.getElementById('dropdown'))) {
+            setDropdown(false);
+        }
+    }
+
+    useEffect(() => {
         const interval = setInterval(() => {
             setSeconds(new Date().getSeconds());
             setMinutes(new Date().getMinutes());
@@ -68,7 +80,7 @@ function NavbarComponent({data}) {
                         <div className="flex justify-center gap-5 text-lg items-center relative ml-3">
                             <span className="font-bold">{hours < 10 ? '0' + hours : hours}:{minutes < 10 ? '0' + minutes : minutes}:{seconds < 10 ? '0' + seconds : seconds}</span>
 
-                            <div>
+                            <div id="user-button">
                                 <button onClick={() => open()}
                                         className="flex rounded-full bg-gray-800 text-sm"
                                         id="user-menu-button" aria-expanded="false" aria-haspopup="true">
@@ -81,7 +93,8 @@ function NavbarComponent({data}) {
 
                             {dropdown && (
                                 <div
-                                    className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-[#1f2024] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    id="dropdown"
+                                    className="top-8 absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-[#1f2024] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                                     tabIndex="-1">
 
