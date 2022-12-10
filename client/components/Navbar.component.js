@@ -1,11 +1,24 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Skeleton from "react-loading-skeleton";
+import Skeleton from 'react-loading-skeleton';
 
 function NavbarComponent({data}) {
     const [dropdown, setDropdown] = useState(false);
     const [openMBox, setOpenMBox] = useState(false);
+    const [hours, setHours] = useState(new Date().getHours());
+    const [minutes, setMinutes] = useState(new Date().getMinutes());
+    const [seconds, setSeconds] = useState(new Date().getSeconds());
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSeconds(new Date().getSeconds());
+            setMinutes(new Date().getMinutes());
+            setHours(new Date().getHours());
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const open = () => {
         setDropdown(!dropdown);
@@ -52,7 +65,9 @@ function NavbarComponent({data}) {
                         </div>
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                        <div className="relative ml-3">
+                        <div className="flex justify-center gap-5 text-lg items-center relative ml-3">
+                            <span className="font-bold">{hours < 10 ? '0' + hours : hours}:{minutes < 10 ? '0' + minutes : minutes}:{seconds < 10 ? '0' + seconds : seconds}</span>
+
                             <div>
                                 <button onClick={() => open()}
                                         className="flex rounded-full bg-gray-800 text-sm"

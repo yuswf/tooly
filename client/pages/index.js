@@ -11,7 +11,6 @@ import HomeComponent from '../components/Home.component';
 function Home() {
     const dispatch = useDispatch();
     const {user} = useSelector(state => state.user);
-
     const fetcher = url => fetch(url, {
         method: 'GET',
         headers: {

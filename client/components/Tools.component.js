@@ -6,6 +6,7 @@ import StopWatchComponent from './StopWatch.component';
 import TimerComponent from './Timer.component';
 import PomodoroComponent from './Pomodoro.component';
 import InvestmentComponent from './Investment.component';
+import ToDoListComponent from './ToDoList.component';
 
 function ToolsComponent() {
     const {user: {data}, manuelTimer: {isRunning: ManuelTimerIsRunning}, stopWatch: {fullScreenMode, isRunning: StopwatchIsRunning}} = useSelector(state => state);
@@ -43,6 +44,12 @@ function ToolsComponent() {
         }
     ]
     const tools = [
+        {
+            name: 'To-Do List',
+            component: <ToDoListComponent/>,
+            description: 'A simple to-do list.',
+            perm: 3,
+        },
         {
             name: 'Timer',
             component: <TimerComponent/>,
