@@ -52,7 +52,7 @@ function ToDoListComponent() {
                 <button type="submit" onClick={addTodo} disabled={todo === ''} class="disabled:bg-opacity-30 disabled:cursor-not-allowed transition-all bg-green-500 bg-opacity-75 text-white w-2/12 max-sm:w-16 rounded p-2">Add</button>
             </div>
 
-            <div class="flex flex-col gap-3 justify-between items-center p-8">
+            <div class="flex todos-d flex-col gap-3 justify-between items-center p-8">
                 {todos.length > 0 ? todos.map((todo, index) => (
                     <div key={index} class="flex gap-3 justify-between items-center w-full">
                         <h2 onClick={() => completeTodo(index)} class={`${todo.completed ? 'line-through text-green-400' : 'text-white'} transition-all cursor-pointer truncate font-bold text-base mr-2`}>{todo.name}</h2>

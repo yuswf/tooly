@@ -80,5 +80,18 @@ html, body {
 .save-d::-webkit-scrollbar {
   width: 3px;
 }
+.todos-d::-webkit-scrollbar-thumb {
+  background: #093a5b;
+  border-radius: 10px;
+}
+.todos-d::-webkit-scrollbar {
+  width: 3px;
+}
+.todos-d {
+  max-height: 240px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: #093a5b;
+}
 
 /*# sourceMappingURL=style.css.map */
