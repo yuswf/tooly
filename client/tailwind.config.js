@@ -6,6 +6,7 @@ module.exports = {
     ],
     theme: {
         fontSize: {
+            'base': '1rem',
             'lg': '1.125rem',
             'xs': '.75rem',
             'xl': '1.25rem',
@@ -19,5 +20,7 @@ module.exports = {
         },
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/line-clamp'),
+    ],
 }

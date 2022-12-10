@@ -54,7 +54,9 @@ function ManuelSetTimerComponent() {
         SetHours(h);
         SetMinutes(m);
         SetSeconds(s);
-        localStorage.setItem('remainingTime', isRunning ? Number(ms - 10) : ms);
+        if (ms !== 0) {
+            localStorage.setItem('remainingTime', isRunning ? Number(ms - 10) : ms);
+        }
     }, [ms]);
 
     const set = () => {
