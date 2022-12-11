@@ -26,6 +26,10 @@ html, body {
 .main .login-b:hover {
   background-color: #0a0a0b;
 }
+.small-loader {
+  position: absolute;
+  animation: rotation 2s infinite linear;
+}
 
 .loader {
   position: absolute;
@@ -63,6 +67,7 @@ html, body {
   font-size: 18px;
   font-weight: 600;
 }
+
 .save-d {
   max-height: 300px;
   overflow-x: hidden;
@@ -75,19 +80,6 @@ html, body {
 }
 .save-d::-webkit-scrollbar {
   width: 3px;
-}
-.todos-d::-webkit-scrollbar-thumb {
-  background: #093a5b;
-  border-radius: 10px;
-}
-.todos-d::-webkit-scrollbar {
-  width: 3px;
-}
-.todos-d {
-  max-height: 240px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-color: #093a5b;
 }
 
 /*# sourceMappingURL=style.css.map */

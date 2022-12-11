@@ -7,6 +7,7 @@ import TimerComponent from './Timer.component';
 import PomodoroComponent from './Pomodoro.component';
 import InvestmentComponent from './Investment.component';
 import ToDoListComponent from './ToDoList.component';
+import NotesComponent from './Notes.component';
 
 function ToolsComponent() {
     const {user: {data}, manuelTimer: {isRunning: ManuelTimerIsRunning}, stopWatch: {fullScreenMode, isRunning: StopwatchIsRunning}} = useSelector(state => state);
@@ -63,6 +64,12 @@ function ToolsComponent() {
             perm: 0,
         },
         {
+            name: 'Notes',
+            component: <NotesComponent/>,
+            description: 'A simple note taking app.',
+            perm: 3,
+        },
+        {
             name: 'Pomodoro',
             component: <PomodoroComponent/>,
             description: 'A simple pomodoro timer to time your tasks.',
@@ -76,8 +83,8 @@ function ToolsComponent() {
         },
     ];
 
-    const [component, setComponent] = useState(!process.env.admins.includes(data.id) ? tools.filter(tool => tool.perm <= 0)[0]?.component || 'No tools available.' : tools[0].component);
-    const [i, setI] = useState(!process.env.admins.includes(data.id) ? tools.findIndex(tool => tool.perm <= 0) : 0);
+    const [component, setComponent] = useState(!process.env.admins.includes(data.id) ? tools.filter(tool => tool.perm <= 0)[0]?.component || 'No tools available.' : tools.filter(tool => tool.perm === 3)[0].component);
+    const [i, setI] = useState(!process.env.admins.includes(data.id) ? tools.findIndex(tool => tool.perm <= 0) : tools.findIndex(tool => tool.perm === 3));
 
     const toolViewer = (i) => {
         const component = tools[i].component;

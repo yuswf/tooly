@@ -36,11 +36,6 @@ async function sendToUser(id, records, msToTime) {
                 Authorization: "Bot " + process.env.token,
                 'Content-Type': 'application/json',
             }
-            /*
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Alow-Access-Control-Origin': '*',
-            */
         });
         const json = await res.json();
 

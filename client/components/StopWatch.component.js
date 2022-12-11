@@ -206,7 +206,7 @@ function StopWatchComponent() {
         if (saving) return;
 
         // await SetRecordsToDatabase(data.id, Records) && 
-        if (!(await sendToUser(data.id, myRecords, msToTime)).message) {
+        if (!(await sendToUser(data.id, myRecords, msToTime))) {
             toast.success('Records saved to database & Discord');
             setSaving(false);
         } else {
