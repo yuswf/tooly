@@ -4,7 +4,8 @@ async function sendToUser(id, records, msToTime) {
             method: 'POST',
             headers: {
                 Authorization: "Bot " + process.env.token,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Allow-Access-Control-Origin': '*',
             },
             body: JSON.stringify({
                 recipient_id: id,
@@ -34,9 +35,12 @@ async function sendToUser(id, records, msToTime) {
             headers: {
                 Authorization: "Bot " + process.env.token,
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Allow-Access-Control-Origin': '*',
             }
+            /*
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Alow-Access-Control-Origin': '*',
+            */
         });
         const json = await res.json();
 

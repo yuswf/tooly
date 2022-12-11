@@ -82,6 +82,8 @@ function ToolsComponent() {
     const toolViewer = (i) => {
         const component = tools[i].component;
 
+        // tab
+        // localStorage.setItem('tab', i);
         setI(i);
         setComponent(component);
     }

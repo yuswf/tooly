@@ -26,10 +26,6 @@ html, body {
 .main .login-b:hover {
   background-color: #0a0a0b;
 }
-.small-loader {
-  position: absolute;
-  animation: rotation 2s infinite linear;
-}
 
 .loader {
   position: absolute;

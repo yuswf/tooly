@@ -205,7 +205,8 @@ function StopWatchComponent() {
         setSaving(true);
         if (saving) return;
 
-        if (await SetRecordsToDatabase(data.id, Records) && !(await sendToUser(data.id, Records, msToTime)).message) {
+        // await SetRecordsToDatabase(data.id, Records) && 
+        if (!(await sendToUser(data.id, myRecords, msToTime)).message) {
             toast.success('Records saved to database & Discord');
             setSaving(false);
         } else {
@@ -297,13 +298,12 @@ function StopWatchComponent() {
                 <>
                     {getGuilds?.length > 0 ? getGuilds?.filter(guild => guild.id === process.env.mainServer).length === 1
                             ?
-                            <div className={`flex justify-center mt-5`}>
+                            <div className={`w-auto flex justify-center mt-5`}>
                                 <button disabled={true} //Records.length === 0 || saving
-                                        className="disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 border border-[#5865f2] border-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary mr-2"
+                                        className={`${saving ? 'w-24' : ''} disabled:cursor-not-allowed disabled:bg-[#1f2024]-25 disabled:bg-opacity-25 border border-[#5865f2] border-opacity-25 btn rounded p-3 bg-[#1f2024] btn-primary mr-2`}
                                         onClick={saveToDB}>
-                                    <span className="mr-1"><IconComponent icon="locked" size={16} color="gold"/></span>
-                                    {saving ? <span className="small-loader"><IconComponent icon="loader" size={32}
-                                                                                            color="#5865F2"/></span> : <>Save
+                                    <span className="mr-1"></span>{/*<IconComponent icon="loader" size={26} color="#5865F2"/>*/}
+                                    {saving ? <span className={`${saving ? 'animate-spin' : ''} ml-auto mr-auto`}>Loading...</span> : <><IconComponent icon="locked" size={16} color="gold"/> Save
                                         to <span className="inline-block font-bold text-[#5865F2]">Discord</span>
                                     </>}
                                 </button>
