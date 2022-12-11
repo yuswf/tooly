@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import Image from 'next/image';
 import {useDispatch, useSelector} from 'react-redux';
+import Skeleton from 'react-loading-skeleton';
 
 function ToDoListComponent() {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function ToDoListComponent() {
 
         const newTodo = {
             name: todo,
-            completed: false,
+            completed: false
         }
 
         setTodos([...todos, newTodo]);
