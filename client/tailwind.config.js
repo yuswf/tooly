@@ -17,6 +17,7 @@ module.exports = {
             '7xl': '5rem',
             '10xl': '10rem',
             '5xl': '3rem',
+            '6xl': '4rem',
         },
         extend: {},
     },

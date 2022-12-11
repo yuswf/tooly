@@ -97,7 +97,7 @@ function ManuelSetTimerComponent() {
     }
 
     return (
-        <div className="w-9/12">
+        <div className="w-9/12 ml-auto mr-auto">
             <div className="mt-5 flex gap-3">
                 <select value={hours}
                         onChange={(e) => setHours(Number(e.target.value))}
@@ -159,12 +159,13 @@ function ManuelSetTimerComponent() {
             {ms > 0 && (
                 <>
                     <br/><br/>
-                    <span
-                        className={`max-sm:ml-5 max-md:ml-10 max-lg:ml-3.5 lg:ml-3.5 max-sm:text-4xl sm:text-3xl md:text-5xl lg:text-5xl cursor-default stopwatch-s`}>
+                    <div
+                        // max-sm:text-3xl mr-auto ml-auto max-md:ml-10 max-lg:ml-3.5 lg:ml-3.5 max-sm:text-4xl sm:text-3xl md:text-5xl lg:text-5xl  stopwatch-s
+                        className={`relative lg:ml-1 text-center cursor-default max-sm:text-4xl sm:text-3xl md:text-5xl lg:text-5xl`}>
                         <h1 className={`inline text-bold sw-el p-4 rounded bg-[#1f2024] mr-2`}>{Hours < 10 ? `0${Hours}` : Hours}</h1>
                         <h1 className={`inline text-bold sw-el p-4 rounded bg-[#1f2024] mr-2`}>{Minutes < 10 ? `0${Minutes}` : Minutes}</h1>
                         <h1 className={`inline text-bold sw-el p-4 rounded bg-[#1f2024] mr-2`}>{Seconds < 10 ? `0${Seconds}` : Seconds}</h1>
-                    </span>
+                    </div>
                 </>
             )}
         </div>
