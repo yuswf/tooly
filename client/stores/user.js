@@ -25,6 +25,5 @@ export const userSlice = createSlice({
         },
     },
 });
-
 export const {set, setData, setGuilds, setOnlineUser} = userSlice.actions;
 export default userSlice.reducer;

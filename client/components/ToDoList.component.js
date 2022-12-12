@@ -9,6 +9,7 @@ function ToDoListComponent() {
 
     const [todo, setTodo] = useState('');
     const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('todos')) || []);
+    // const [showModal, setShowModal] = useState(false);
 
     const addTodo = () => {
         if (todo === '') return;
@@ -23,6 +24,13 @@ function ToDoListComponent() {
         localStorage.setItem('todos', JSON.stringify([...todos, newTodo]));
         setTodo('');
     }
+
+    /*
+    const openModal = (todo) => {
+        dispatch(SetTodo(todo));
+        setShowModal(true);
+    }
+    */
 
     const completeTodo = (index) => {
         const newTodos = [...todos];
@@ -44,7 +52,7 @@ function ToDoListComponent() {
                 
                 <div className="flex items-center">
                     <h1 className="text-white font-bold text-xl mr-2">{username}</h1>
-                    {avatar ? <Image width={32} height={32} className="h-8 w-8 rounded-full" src={process.env.avatarBase + `/${id}/${avatar}`} alt="avatar"/> : <Skeleton circle={true} width={33} height={30} />}
+                    {avatar ? <Image width={32} height={32} className="h-8 w-8 rounded-full" src={process.env.avatarBase + `/${id}/${avatar}`} alt="avatar"/> : <Skeleton circle={true} width={32} height={32} />}
                 </div>
             </div>
 
@@ -56,6 +64,7 @@ function ToDoListComponent() {
             <div className="flex todos-d flex-col gap-3 justify-between items-center p-8">
                 {todos.length > 0 ? todos.map((todo, index) => (
                     <div key={index} className="flex gap-3 justify-between items-center w-full">
+                        {/*<span className="lg:hidden cursor-pointer text-xs font-bold text-gray-400 text-opacity-75">View</span>*/}
                         <h2 onClick={() => completeTodo(index)} className={`${todo.completed ? 'line-through text-green-400' : 'text-white'} transition-all cursor-pointer truncate font-bold text-base mr-2`}>{todo.name}</h2>
                         <button onClick={() => deleteTodo(index)} className="bg-red-800 bg-opacity-75 text-white w-2/12 max-sm:w-16 rounded p-2">Delete</button>
                     </div>
