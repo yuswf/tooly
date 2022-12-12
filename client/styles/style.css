@@ -82,6 +82,40 @@ html, body {
   width: 3px;
 }
 
+.tools-d {
+  max-height: 180px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: #093a5b;
+}
+@media (max-width: 768px) {
+  .tools-d {
+    max-height: 180px !important;
+  }
+}
+@media (max-width: 425px) {
+  .tools-d {
+    max-height: 225px !important;
+  }
+}
+@media (max-width: 375px) {
+  .tools-d {
+    max-height: 280px !important;
+  }
+}
+@media (max-width: 320px) {
+  .tools-d {
+    max-height: 290px !important;
+  }
+}
+.tools-d::-webkit-scrollbar-thumb {
+  background: #093a5b;
+  border-radius: 10px;
+}
+.tools-d::-webkit-scrollbar {
+  width: 3px;
+}
+
 .todos-d::-webkit-scrollbar-thumb {
   background: #093a5b;
   border-radius: 10px;

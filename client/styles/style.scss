@@ -104,13 +104,48 @@ html, body {
   }
 }
 
+.tools-d {
+  @media (max-width: 768px) {
+    max-height: 180px !important;
+  }
+
+  @media (max-width: 425px) {
+    max-height: 225px !important;
+  }
+
+  @media (max-width: 375px) {
+    max-height: 280px !important;
+  }
+
+  @media (max-width: 320px) {
+    max-height: 290px !important;
+  }
+
+  max-height: 180px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: $c;
+  // scrollbar-width: none;
+
+  &::-webkit-scrollbar-thumb {
+    background: $c;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+}
+
 .todos-d::-webkit-scrollbar-thumb {
   background: #093a5b;
   border-radius: 10px;
 }
+
 .todos-d::-webkit-scrollbar {
   width: 3px;
 }
+
 .todos-d {
   max-height: 240px;
   overflow-x: hidden;

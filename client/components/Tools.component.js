@@ -107,7 +107,7 @@ function ToolsComponent() {
     return (
         <div className="mt-1 shadow-sm">
             {!fullScreenMode && (
-                <div className="max-w-screen-xl px-4 py-5 mx-auto sm:grid-cols-2 md:px-6">
+                <div className="tools-d snap-y max-w-screen-xl px-4 py-5 mx-auto sm:grid-cols-2 md:px-6">
                     <ul className="grid grid-cols-2 gap-2">
                         {tools.map((item, index) => (
                             <li
