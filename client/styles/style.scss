@@ -147,10 +147,97 @@ html, body {
 }
 
 .todos-d {
-  max-height: 240px;
+  max-height: 343px;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-color: #093a5b;
+}
+
+.notes-c {
+  & h1 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  & h2 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  & h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  & p {
+    font-size: 14px;
+  }
+
+  & a {
+    font-size: 14px;
+    text-decoration: underline;
+  }
+
+  & ul {
+    font-size: 14px;
+  }
+
+  & ol {
+    font-size: 14px;
+  }
+
+  & li {
+    font-size: 14px;
+  }
+
+  & blockquote {
+    font-size: 14px;
+  }
+
+  & pre {
+    font-size: 14px;
+  }
+
+  & code {
+    font-size: 14px;
+  }
+
+  & table {
+    font-size: 14px;
+  }
+
+  & thead {
+    font-size: 14px;
+  }
+
+  & tbody {
+    font-size: 14px;
+  }
+
+  & tr {
+    font-size: 14px;
+  }
+
+  & td {
+    font-size: 14px;
+  }
+
+  & th {
+    font-size: 14px;
+  }
+
+  & img {
+    max-width: 100%;
+  }
+
+  & .notes-e {
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: #093a5b;
+    // scrollbar-width: none;
+    max-height: 500px;
+  }
 }
 
 

@@ -126,10 +126,76 @@ html, body {
 }
 
 .todos-d {
-  max-height: 240px;
+  max-height: 343px;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-color: #093a5b;
+}
+
+.notes-c h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.notes-c h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.notes-c h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.notes-c p {
+  font-size: 14px;
+}
+.notes-c a {
+  font-size: 14px;
+  text-decoration: underline;
+}
+.notes-c ul {
+  font-size: 14px;
+}
+.notes-c ol {
+  font-size: 14px;
+}
+.notes-c li {
+  font-size: 14px;
+}
+.notes-c blockquote {
+  font-size: 14px;
+}
+.notes-c pre {
+  font-size: 14px;
+}
+.notes-c code {
+  font-size: 14px;
+}
+.notes-c table {
+  font-size: 14px;
+}
+.notes-c thead {
+  font-size: 14px;
+}
+.notes-c tbody {
+  font-size: 14px;
+}
+.notes-c tr {
+  font-size: 14px;
+}
+.notes-c td {
+  font-size: 14px;
+}
+.notes-c th {
+  font-size: 14px;
+}
+.notes-c img {
+  max-width: 100%;
+}
+.notes-c .notes-e {
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: #093a5b;
+  max-height: 500px;
 }
 
 /*# sourceMappingURL=style.css.map */
