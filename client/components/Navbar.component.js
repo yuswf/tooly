@@ -82,12 +82,12 @@ function NavbarComponent({data}) {
 
                             <div id="user-button">
                                 <button onClick={() => open()}
-                                        className="flex rounded-full bg-gray-800 text-sm"
+                                        className="flex rounded-full text-sm"
                                         id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                     <span className="sr-only">Open user menu</span>
                                     {data.avatar ? <Image width={32} height={32} className="h-8 w-8 rounded-full"
                                                           src={process.env.avatarBase + `/${data.id}/${data.avatar}`}
-                                                          alt="avatar"/> : <Skeleton circle={true} width={33} height={30} />}
+                                                          alt="avatar"/> : <Skeleton className="mb-1" circle={true} width={32} height={32} />}
                                 </button>
                             </div>
 
