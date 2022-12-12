@@ -87,7 +87,7 @@ function NavbarComponent({data}) {
                                     <span className="sr-only">Open user menu</span>
                                     {data.avatar ? <Image width={32} height={32} className="h-8 w-8 rounded-full"
                                                           src={process.env.avatarBase + `/${data.id}/${data.avatar}`}
-                                                          alt="avatar"/> : <Skeleton className="mb-1" circle={true} width={32} height={32} />}
+                                                          alt="avatar"/> : <Skeleton className="mb-1.5" circle={true} width={32} height={32} />}
                                 </button>
                             </div>
 
