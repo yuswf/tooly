@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/NoteViewer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/NoteViewer.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Notes.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Notes.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Tools.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Tools.component.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +94,7 @@
       <workItem from="1670883368434" duration="2815000" />
       <workItem from="1670886366256" duration="234000" />
       <workItem from="1670919290443" duration="11105000" />
-      <workItem from="1670943419393" duration="8196000" />
+      <workItem from="1670943419393" duration="8521000" />
     </task>
     <servers />
   </component>
