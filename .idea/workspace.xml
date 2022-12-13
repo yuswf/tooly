@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/MarkdownViewer.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/NoteViewer.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/stores/Note.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/NoteViewer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/NoteViewer.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components/Notes.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Notes.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/StopWatch.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/StopWatch.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Timer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Timer.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/ToDoList.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/ToDoList.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/stores/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/stores/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/utils/sendToUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/archive/sendToUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,8 +59,8 @@
       <recent name="C:\Users\yusu\Desktop\xxx\software tools\tooly-main\client\archive" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\yusu\Desktop\xxx\software tools\tooly-main\server\archive" />
       <recent name="C:\Users\yusu\Desktop\xxx\software tools\tooly-main\client\archive" />
+      <recent name="C:\Users\yusu\Desktop\xxx\software tools\tooly-main\server\archive" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,7 +99,7 @@
       <workItem from="1670883368434" duration="2815000" />
       <workItem from="1670886366256" duration="234000" />
       <workItem from="1670919290443" duration="11105000" />
-      <workItem from="1670943419393" duration="5723000" />
+      <workItem from="1670943419393" duration="8196000" />
     </task>
     <servers />
   </component>

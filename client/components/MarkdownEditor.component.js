@@ -1,10 +1,13 @@
+import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import EmojiPicker from 'emoji-picker-react';
 
 import {setNote, setNotes} from '../stores/Note';
 
 function MarkdownEditor() {
     const dispatch = useDispatch();
     const {note, notes} = useSelector(state => state.note);
+    const [openedEmojiTab, setOpenedEmojiTab] = useState(false);
 
     const addNote = () => {
         if (note.length === 0) return;
@@ -17,13 +20,29 @@ function MarkdownEditor() {
         localStorage.setItem('notes', JSON.stringify(newNotes));
     }
 
+    /*
+    const onEmojiClick = (event, emojiObject) => {
+        setOpenedEmojiTab(false);
+        dispatch(setNote(note => `${note}${emojiObject.emoji === undefined ? '' : emojiObject.emoji}`));
+    }
+    */
+
+    const download = () => {
+        const blob = new Blob([note], {type: "text/plain"});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = "note.md";
+        link.href = url;
+        link.click();
+    }
+
     return (
         <div
             className="max-lg:mb-2 notes-e bg-[#1f2024] w-full rounded resize-none px-8 w-full rounded">
             <div className="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600">
                 <div
                     className="flex flex-wrap items-center divide-gray-200 sm:divide-x dark:divide-gray-600">
-                    <div className="flex items-center space-x-1 sm:pr-4">
+                    <div className="relative flex items-center space-x-1 sm:pr-4">
                         {/*
                                 <button type="button"
                                         className="transition-all ease p-2 p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
@@ -45,7 +64,7 @@ function MarkdownEditor() {
                                     </svg>
                                     <span className="sr-only">Embed map</span>
                                 </button>
-                                */}
+
                         <button type="button"
                                 className="transition-all ease p-2 p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
                             <svg aria-hidden="true" className="w-5 h-5" fill="currentColor"
@@ -66,8 +85,22 @@ function MarkdownEditor() {
                             </svg>
                             <span className="sr-only">Format code</span>
                         </button>
+                        */}
+                        {/*
+                        {openedEmojiTab && <div className="absolute z-10 top-0 left-[78px] w-auto">
+                            <div className="overflow-hidden rounded-lg h-72 shadow-lg ring-1 ring-black ring-opacity-5">
+                                <EmojiPicker theme="dark" onEmojiClick={onEmojiClick} />
+
+                                <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+
+                                </div>
+                            </div>
+                        </div>}
+                        */}
                         <button type="button"
-                                className="transition-all ease p-2 p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                disabled={true}
+                                onClick={() => ''} //setOpenedEmojiTab(!openedEmojiTab)
+                                className="disabled:cursor-not-allowed disabled:bg-opacity-50 transition-all ease p-2 p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
                             <svg aria-hidden="true" className="w-5 h-5" fill="currentColor"
                                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd"
@@ -111,7 +144,9 @@ function MarkdownEditor() {
                                 </button>
                                 */}
                         <button type="button"
-                                className="transition-all ease p-2 p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                disabled={note.length === 0}
+                                onClick={note.length > 0 ? download : () => ''}
+                                className="disabled:cursor-not-allowed disabled:bg-opacity-50 transition-all ease p-2 p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
                             <svg aria-hidden="true" className="w-5 h-5" fill="currentColor"
                                  viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd"
@@ -123,7 +158,8 @@ function MarkdownEditor() {
                     </div>
                 </div>
                 <button type="button" data-tooltip-target="tooltip-fullscreen"
-                        className="transition-all ease p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                        disabled={true}
+                        className="disabled:cursor-not-allowed disabled:bg-opacity-50 transition-all ease p-2 text-gray-500 rounded cursor-pointer sm:ml-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
                     <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                          xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd"

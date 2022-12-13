@@ -5,12 +5,10 @@ import MarkdownEditorComponent from './MarkdownEditor.component';
 import MarkdownViewerComponent from './MarkdownViewer.component';
 import NoteViewerComponent from './NoteViewer.component';
 
-
 function NotesComponent() {
-    const dispatch = useDispatch();
     const [component, setComponent] = useState(<MarkdownEditorComponent/>);
     const [isEditor, setIsEditor] = useState(true);
-    const {note, notes} = useSelector(state => state.note);
+    const {note} = useSelector(state => state.note);
 
     const handleComponent = () => {
         if (note.length === 0) return;

@@ -25,7 +25,7 @@ const md = new Remarkable({
 
 function NoteViewerComponent() {
     const dispatch = useDispatch();
-    const {note, notes} = useSelector(state => state.note);
+    const {notes} = useSelector(state => state.note);
 
     const editNote = (index) => {
     }
@@ -54,8 +54,8 @@ function NoteViewerComponent() {
                                 <h1 className="">Note:</h1>
 
                                 <div className="absolute right-0">
-                                    <button onClick={() => editNote(index)}
-                                            className="mr-2 px-4 bg-green-600 p-1 font-bold rounded">Edit
+                                    <button disabled={true} onClick={() => editNote(index)}
+                                            className="disabled:bg-opacity-50 disabled:cursor-not-allowed mr-2 px-4 bg-green-600 p-1 font-bold rounded">Edit
                                     </button>
                                     <button onClick={() => deleteNote(index)}
                                             className="bg-red-500 px-3 p-1 font-bold rounded">Delete
