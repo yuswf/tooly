@@ -46,6 +46,12 @@ function ToolsComponent() {
     ]
     const tools = [
         {
+            name: 'Notes',
+            component: <NotesComponent/>,
+            description: 'A simple note taking app.',
+            perm: -1,
+        },
+        {
             name: 'To-Do List',
             component: <ToDoListComponent/>,
             description: 'A simple to-do list.',
@@ -55,19 +61,13 @@ function ToolsComponent() {
             name: 'Timer',
             component: <TimerComponent/>,
             description: 'A simple timer to time your tasks.',
-            perm: -1,
+            perm: 0,
         },
         {
             name: 'Stopwatch',
             component: <StopWatchComponent/>,
             description: 'A simple stopwatch to time your tasks.',
             perm: 0,
-        },
-        {
-            name: 'Notes',
-            component: <NotesComponent/>,
-            description: 'A simple note taking app.',
-            perm: 3,
         },
         {
             name: 'Pomodoro',
