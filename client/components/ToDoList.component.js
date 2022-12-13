@@ -65,7 +65,7 @@ function ToDoListComponent() {
                 {todos.length > 0 ? todos.map((todo, index) => (
                     <div key={index} className="flex gap-3 justify-between items-center w-full">
                         {/*<span className="lg:hidden cursor-pointer text-xs font-bold text-gray-400 text-opacity-75">View</span>*/}
-                        <h2 onClick={() => completeTodo(index)} className={`${todo.completed ? 'line-through text-green-400' : 'text-white'} transition-all cursor-pointer truncate font-bold text-base mr-2`}>{todo.name}</h2>
+                        <h2 onClick={() => completeTodo(index)} className={`${todo.completed ? 'line-through text-green-400' : 'text-white'} transition-all cursor-pointer truncate font-bold text-base`}>{todo.name}</h2>
                         <button onClick={() => deleteTodo(index)} className="bg-red-800 bg-opacity-75 text-white w-2/12 max-sm:w-16 rounded p-2">Delete</button>
                     </div>
                 )) : <h1 className="text-white font-bold text-xl mb-10">No tasks yet!</h1>}

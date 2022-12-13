@@ -190,6 +190,19 @@ html, body {
 .notes-c img {
   max-width: 100%;
 }
+.notes-c .notes-dw {
+  max-height: 600px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: #093a5b;
+}
+.notes-c .notes-dw::-webkit-scrollbar-thumb {
+  background: #093a5b;
+  border-radius: 10px;
+}
+.notes-c .notes-dw::-webkit-scrollbar {
+  width: 3px;
+}
 .notes-c .notes-e {
   height: 500px;
   overflow-x: hidden;

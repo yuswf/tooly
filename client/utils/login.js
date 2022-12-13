@@ -2,7 +2,7 @@ function login(router) {
     const scopes = [
         'identify',
         'email',
-        'guilds',
+        // 'guilds',
         //'guilds.join'
     ];
     const uri = process.env.authorization + '?' +

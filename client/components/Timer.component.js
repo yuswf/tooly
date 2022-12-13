@@ -8,6 +8,7 @@ import IconComponent from './Icon.component';
 
 function TimerComponent() {
     const {data: {username, id}} = useSelector(state => state.user);
+    const {isRunning} = useSelector(state => state.manuelTimer);
     const lists = [
         {
             status: 1,
@@ -42,8 +43,8 @@ function TimerComponent() {
             <ul className="flex flex-wrap gap-3 justify-center items-center mb-6">
                 {lists.map((list, index) => (
                     <li key={index}
-                        className={`${index === selected ? 'bg-[#093a5b]' : ''} ${check(list) && list.status > 0 ? 'bg-[#1f2024] bg-opacity-25 cursor-not-allowed' : ''} bg-[#1f2024] rounded p-2.5 font-bold text-sm cursor-pointer`}
-                        onClick={() => check(list) && list.status > 0 ? '' : changeComp(index)}>{list.name} {list.status > 0 ? <span><IconComponent icon="locked" size={16} color="gold" /></span> : ''}</li>
+                        className={`${index === selected ? 'bg-[#093a5b]' : ''} ${index === selected ? false : isRunning || check(list) && list.status > 0 ? 'bg-[#1f2024] bg-opacity-25 cursor-not-allowed' : ''} transition-all ease bg-[#1f2024] rounded p-2.5 font-bold text-sm cursor-pointer`}
+                        onClick={() => !isRunning ? check(list) && list.status > 0 ? '' : changeComp(index) : ''}>{list.name} {list.status > 0 ? <span><IconComponent icon="locked" size={16} color="gold" /></span> : ''}</li>
                 ))}
             </ul>
 

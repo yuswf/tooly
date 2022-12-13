@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/MarkdownViewer.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/NoteViewer.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/stores/Note.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Navbar.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Navbar.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Tools.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Tools.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Notes.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Notes.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/StopWatch.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/StopWatch.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Timer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Timer.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/ToDoList.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/ToDoList.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/stores/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/stores/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/utils/sendToUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/archive/sendToUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +106,11 @@
       <workItem from="1670694006874" duration="591000" />
       <workItem from="1670704818032" duration="15000" />
       <workItem from="1670757439385" duration="2213000" />
-      <workItem from="1670862151897" duration="9327000" />
+      <workItem from="1670862151897" duration="9797000" />
+      <workItem from="1670883368434" duration="2815000" />
+      <workItem from="1670886366256" duration="234000" />
+      <workItem from="1670919290443" duration="11105000" />
+      <workItem from="1670943419393" duration="5723000" />
     </task>
     <servers />
   </component>
@@ -106,6 +121,17 @@
     <option featureType="dependencySupport" implementationName="javascript:npm:tailwindcss" />
     <option featureType="dependencySupport" implementationName="javascript:npm:next" />
     <option featureType="dependencySupport" implementationName="javascript:npm:postcss" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
