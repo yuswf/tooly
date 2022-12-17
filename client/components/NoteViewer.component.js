@@ -47,9 +47,9 @@ function NoteViewerComponent() {
 
             {notes.length > 0 && (
                 <div
-                    className="notes-dw gap-2 grid max-lg:grid-cols-1 w-full lg:grid-cols-3 h-full flex justify-between mt-5 mb-20">
+                    className="notes-dw gap-2 grid max-lg:grid-cols-1 w-full lg:grid-cols-3 flex justify-between mt-5">
                     {notes.map((note, index) => (
-                        <div key={index} className="bg-[#1f2024] p-8 py-7 rounded">
+                        <div key={index} className="bg-[#1f2024] h-full p-8 py-7 rounded mb-56">
                             <div className="flex relative">
                                 <h1 className="">Note:</h1>
 

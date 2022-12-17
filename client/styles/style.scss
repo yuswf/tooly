@@ -6,6 +6,17 @@ html, body {
   background: $bg-color;
   color: $text-color;
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar-thumb {
+    background: #093a5b;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
 }
 
 @keyframes rotation {
