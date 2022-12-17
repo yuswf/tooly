@@ -21,7 +21,7 @@ function Logout() {
             dispatch(setData({}));
 
             router.push('/');
-        }, 5000)
+        }, 3000)
     }, [dispatch]);
 
     return (
