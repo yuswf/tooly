@@ -1,7 +1,7 @@
 function login(router) {
     const scopes = [
         'identify',
-        'email',
+        // 'email',
         // 'guilds',
         //'guilds.join'
     ];

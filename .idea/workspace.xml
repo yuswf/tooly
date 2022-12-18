@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/NoteViewer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/NoteViewer.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +105,7 @@
       <workItem from="1671203027318" duration="86000" />
       <workItem from="1671275982433" duration="38000" />
       <workItem from="1671276032325" duration="629000" />
-      <workItem from="1671289628885" duration="952000" />
+      <workItem from="1671289628885" duration="2914000" />
     </task>
     <servers />
   </component>

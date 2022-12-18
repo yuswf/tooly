@@ -100,7 +100,6 @@ function NavbarComponent({data}) {
 
                                     <div className="px-4 py-3">
                                         <span className="block text-sm">{data.username + '#' + data.discriminator}</span>
-                                        <span className="block mt-1 text-sm font-medium truncate">{data.email}</span>
                                     </div>
                                     <hr />
                                     <ul className="py-1" aria-labelledby="user-menu-button">
