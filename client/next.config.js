@@ -14,7 +14,9 @@ const nextConfig = {
         mainServer: '1041312550777790524',
         inviteUrl: 'https://discord.gg/DFzqkuVges',
         admins: ['733784038199918683'], // 822468146131763257
-        bannedUsers: []
+        bannedUsers: [],
+        githubToken: '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',
+        githubUsername: 'yuswf'
     },
     reactStrictMode: false,
 }
