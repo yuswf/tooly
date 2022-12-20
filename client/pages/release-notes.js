@@ -17,16 +17,13 @@ function ChangeLogPage() {
     if (error) return window.location.href = '/';
     if (!data) return <LoaderComponent color="#5865F2"/>;
 
-    console.log(data[0])
-    console.log(data[7])
-
     return (
         <div>
             <h1 className="font-bold text-2xl flex items-center justify-center mt-10">Release Notes</h1>
 
             <div className="flex justify-center items-center mt-7">
                 <ul className="max-w-lg max-md:max-w-md max-sm:max-w-sm">
-                    {data.slice(0, 10).map((_, index) => (
+                    {data.slice(0, 15).map((_, index) => (
                         <li key={index} className="py-3">
                             <div className={`${index === 0 ? 'bg-red-500 bg-opacity-50' : 'bg-[#1f2024]'} rounded p-3 flex items-center space-x-4`}>
                                 <div className="flex-shrink-0">
@@ -34,7 +31,7 @@ function ChangeLogPage() {
                                 </div>
                                 <div className="min-w-0 flex-1">
                                     <p className="text-sm underline font-medium truncate"><a href={_.html_url}>{_.commit.message}</a></p>
-                                    <p className="text-sm truncate">{_.commit.author.name}</p>
+                                    <p className="text-sm truncate underline"><a href={_.author.html_url}>{_.commit.author.name}</a></p>
                                 </div>
                                 <div>
                                     <p className="text-sm truncate">{new Date(_.commit.author.date).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true})}</p>
