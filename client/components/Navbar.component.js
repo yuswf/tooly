@@ -101,7 +101,7 @@ function NavbarComponent({data}) {
                                     <ul className="py-1" aria-labelledby="user-menu-button">
                                         {routes.map((route, index) => (
                                             <li key={index}>
-                                                <Link href={route === 'Logout' ? '/logout' : '/'} className="block px-4 py-2 text-sm">
+                                                <Link href={route.replace(' ', '-').toLowerCase()} className="block px-4 py-2 text-sm">
                                                     {route}
                                                 </Link>
                                             </li>
@@ -118,7 +118,7 @@ function NavbarComponent({data}) {
                 <div className="sm:hidden" id="mobile-menu">
                     <div className="space-y-1 px-2 mt-[-5px] pb-3">
                         {routes.map((route, index) => (
-                            <Link key={index} href={route === 'Logout' ? '/logout' : '/'} className="links bg-[#1f2024] text-white block px-3 py-2 rounded-md text-base font-medium">
+                            <Link key={index} href={route.replace(' ', '-').toLowerCase()} className="links bg-[#1f2024] text-white block px-3 py-2 rounded-md text-base font-medium">
                                 {route}
                             </Link>
                         ))}
