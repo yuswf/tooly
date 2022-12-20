@@ -74,7 +74,7 @@ function NavbarComponent({data}) {
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                         <div className="flex justify-center gap-5 text-lg items-center relative ml-3">
-                            <span className="font-bold">{clock || <Skeleton width={120} />}</span>
+                            <span className="font-bold">{clock || <Skeleton width={112} />}</span>
 
                             <div id="user-button">
                                 <button onClick={() => open()}

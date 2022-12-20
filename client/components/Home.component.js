@@ -34,7 +34,7 @@ function HomeComponent() {
         <div className="home-c">
             {data.id &&
                 (
-                    <>
+                    <div className="relative min-h-screen">
                         <Toaster
                             position="bottom-center"
                             reverseOrder={false}
@@ -44,7 +44,7 @@ function HomeComponent() {
                         {!fullScreenMode && <NavbarComponent data={data}/>}
                         <ToolsComponent/>
                         {!fullScreenMode && <FooterComponent/>}
-                    </>
+                    </div>
                 )
                 ||
                 <LoaderComponent color="#5865F2"/>
