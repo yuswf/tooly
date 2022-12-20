@@ -17,10 +17,6 @@ function ChangeLogPage() {
     if (error) return window.location.href = '/';
     if (!data) return <LoaderComponent color="#5865F2"/>;
 
-    const route = () => {
-        return window.location.href = '/';
-    }
-
     return (
         <div>
             <h1 className="font-bold text-2xl flex items-center justify-center mt-10">Release Notes</h1>
