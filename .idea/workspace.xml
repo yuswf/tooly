@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/NoteViewer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/NoteViewer.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/stores/Note.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/stores/Note.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Footer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Footer.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/Home.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Home.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/style.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +112,7 @@
       <workItem from="1671289628885" duration="2914000" />
       <workItem from="1671381798151" duration="94000" />
       <workItem from="1671484847388" duration="142000" />
-      <workItem from="1671540787144" duration="2768000" />
+      <workItem from="1671540787144" duration="3705000" />
     </task>
     <servers />
   </component>

@@ -7,6 +7,7 @@ import ToolsComponent from './Tools.component';
 import {setData} from '../stores/user';
 import getDiscordData from '../utils/getDiscordData';
 import LoaderComponent from './Loader.component';
+import FooterComponent from './Footer.component';
 
 function HomeComponent() {
     const dispatch = useDispatch();
@@ -42,6 +43,7 @@ function HomeComponent() {
                         <br/>
                         {!fullScreenMode && <NavbarComponent data={data}/>}
                         <ToolsComponent/>
+                        {!fullScreenMode && <FooterComponent/>}
                     </>
                 )
                 ||
