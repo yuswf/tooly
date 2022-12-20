@@ -20,8 +20,8 @@ function ToDoListComponent() {
             completed: false
         }
 
-        setTodos([...todos, newTodo]);
-        localStorage.setItem('todos', JSON.stringify([...todos, newTodo]));
+        setTodos([newTodo, ...todos]);
+        localStorage.setItem('todos', JSON.stringify([newTodo, ...todos]));
         setTodo('');
     }
 
@@ -58,7 +58,7 @@ function ToDoListComponent() {
 
             <div className="flex gap-3 justify-between items-center p-8">
                 <input maxLength={65} minLength={1} value={todo} onKeyDown={(e) => e.key === 'Enter' ? addTodo() : ''} onChange={(e) => setTodo(e.target.value)} type="text" className="outline-none bg-[#2f3035] text-white w-10/12 rounded p-2" placeholder="Add a new task..."/>
-                <button type="submit" onClick={addTodo} disabled={todo === ''} className="disabled:bg-opacity-30 disabled:cursor-not-allowed transition-all bg-green-500 bg-opacity-75 text-white w-2/12 max-sm:w-16 rounded p-2">Add</button>
+                <button type="submit" onClick={addTodo} disabled={todo === ''} className="disabled:bg-opacity-30 disabled:cursor-not-allowed transition-all bg-green-700 bg-opacity-75 text-white w-2/12 max-sm:w-16 rounded p-2">Add</button>
             </div>
 
             <div className="flex todos-d flex-col gap-3 justify-between items-center p-8">
