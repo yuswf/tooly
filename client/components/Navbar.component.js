@@ -36,7 +36,7 @@ function NavbarComponent({data}) {
         setOpenMBox(!openMBox);
     }
 
-    const routes = ['Home', 'Dashboard', 'Settings', 'Logout'];
+    const routes = ['Home', 'Logout', 'Release Notes'];
 
     return (
         <nav className="navbar-c">
@@ -65,7 +65,7 @@ function NavbarComponent({data}) {
                         <div className="hidden sm:ml-[-5] sm:block">
                             <div className="flex space-x-4">
                                 {routes.map((route, index) => (
-                                    <Link key={index} href={route === 'Logout' ? '/logout' : '/'} className="links bg-[#1f2024] px-3 py-2 rounded-md text-sm font-medium">
+                                    <Link key={index} href={route.replace(' ', '-').toLowerCase()} className="links bg-[#1f2024] px-3 py-2 rounded-md text-sm font-medium">
                                         {route}
                                     </Link>
                                 ))}
