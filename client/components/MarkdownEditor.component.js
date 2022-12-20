@@ -2,15 +2,24 @@ import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 // import EmojiPicker from 'emoji-picker-react';
 
-import {setNote, setNotes} from '../stores/Note';
+import {setNote, setNotes, setEditing, setIndex} from '../stores/Note';
 
 function MarkdownEditor() {
     const dispatch = useDispatch();
-    const {note, notes} = useSelector(state => state.note);
+    const {note, notes, editing, eI} = useSelector(state => state.note);
     const [openedEmojiTab, setOpenedEmojiTab] = useState(false);
 
     const addNote = () => {
         if (note.length === 0) return;
+        if (editing) {
+            const newNotes = notes.map((n, i) => i === eI ? {content: note} : n);
+            dispatch(setNotes(newNotes));
+            localStorage.setItem('notes', JSON.stringify(newNotes));
+            dispatch(setNote(''));
+            dispatch(setEditing());
+            dispatch(setIndex(null));
+            return;
+        }
 
         const newNotes = [...notes, {
             content: note,

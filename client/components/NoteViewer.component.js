@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Remarkable} from 'remarkable';
 import hljs from 'highlight.js';
 
-import {setNotes} from '../stores/Note';
+import {setEditing, setNote, setIndex, setNotes} from '../stores/Note';
 
 const md = new Remarkable({
     html: true,
@@ -25,9 +25,12 @@ const md = new Remarkable({
 
 function NoteViewerComponent() {
     const dispatch = useDispatch();
-    const {notes} = useSelector(state => state.note);
+    const {editing, note, notes} = useSelector(state => state.note);
 
-    const editNote = (index) => {
+    const editNote = (note, index) => {
+        dispatch(setNote(note.content));
+        dispatch(setEditing())
+        dispatch(setIndex(index))
     }
 
     const deleteNote = (index) => {
@@ -46,7 +49,7 @@ function NoteViewerComponent() {
         link.click();
     }
 
-    return(
+    return (
         <>
             {notes.length === 0 && (
                 <div className="bg-[#1f2024] mt-5 mb-10 p-8 py-7 w-full rounded">
@@ -63,17 +66,22 @@ function NoteViewerComponent() {
                                 <h1 className="">Note:</h1>
 
                                 <div className="absolute right-0">
-                                    <button disabled={true} onClick={() => ''} // editNote(index)
-                                            className="disabled:bg-opacity-50 disabled:cursor-not-allowed mr-2 px-4 bg-green-600 p-1 font-bold rounded">Edit
+                                    <button
+                                        disabled={editing}
+                                        onClick={editing ? () => '' : () => editNote(note, index)}
+                                        className="disabled:bg-opacity-50 disabled:cursor-not-allowed mr-2 px-4 bg-green-600 p-1 font-bold rounded">Edit
                                     </button>
 
-                                    <button onClick={() => deleteNote(index)}
-                                            className="bg-red-500 mr-2 px-3 p-1 font-bold rounded">Delete
+                                    <button
+                                        disabled={editing}
+                                        onClick={editing ? () => '' : () => deleteNote(index)}
+                                        className="disabled:bg-opacity-50 disabled:cursor-not-allowed bg-red-500 mr-2 px-3 p-1 font-bold rounded">Delete
                                     </button>
 
                                     <button type="button"
-                                            onClick={() => download(note)}
-                                            className="bg-blue-500 px-3 bg-green-600 p-1 font-bold rounded">
+                                            disabled={editing}
+                                            onClick={editing ? () => '' : () => download(note)}
+                                            className="disabled:bg-opacity-50 disabled:cursor-not-allowed bg-blue-500 px-3 bg-green-600 p-1 font-bold rounded">
                                         Download
                                         {/*
                                         <svg aria-hidden="true" className="flex justify-center items-center w-3.5 h-3.5" fill="currentColor"
