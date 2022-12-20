@@ -1,5 +1,9 @@
+import {useRouter} from 'next/router';
+
 function Home() {
-    return window.location.href = '/';
+    const router = useRouter();
+
+    return router.push('/');
 }
 
 export default Home;
