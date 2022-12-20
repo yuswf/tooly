@@ -7,10 +7,10 @@ function Home() {
     const router = useRouter();
 
     useEffect(() => {
-        return () => router.push('/');
+        router.push('/');
     }, []);
 
-    return <LoaderComponent />
+    return <LoaderComponent color="#5865F2" />
 }
 
 export default Home;

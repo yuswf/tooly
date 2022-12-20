@@ -17,6 +17,9 @@ function ChangeLogPage() {
     if (error) return window.location.href = '/';
     if (!data) return <LoaderComponent color="#5865F2"/>;
 
+    console.log(data[0])
+    console.log(data[7])
+
     return (
         <div>
             <h1 className="font-bold text-2xl flex items-center justify-center mt-10">Release Notes</h1>
@@ -30,7 +33,7 @@ function ChangeLogPage() {
                                     <img className="h-10 w-10 rounded-full" src={_.author.avatar_url} alt="pp"/>
                                 </div>
                                 <div className="min-w-0 flex-1">
-                                    <p className="text-sm font-medium truncate">{_.commit.message}</p>
+                                    <p className="text-sm underline font-medium truncate"><a href={_.html_url}>{_.commit.message}</a></p>
                                     <p className="text-sm truncate">{_.commit.author.name}</p>
                                 </div>
                                 <div>
