@@ -13,6 +13,7 @@ function ToDoListComponent() {
 
     const addTodo = () => {
         if (todo === '') return;
+        if (todos.length > 0 && todos.map(todo => todo.name).includes(todo)) return;
         if (todo.length > 65) return;
 
         const newTodo = {
