@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 import LoaderComponent from '../components/Loader.component';
 
@@ -17,7 +17,9 @@ function ChangeLogPage() {
     if (error) return window.location.href = '/';
     if (!data) return <LoaderComponent color="#5865F2"/>;
 
-    console.log(data[0]);
+    const route = () => {
+        return window.location.href = '/';
+    }
 
     return (
         <div>
@@ -43,6 +45,8 @@ function ChangeLogPage() {
                     ))}
                 </ul>
             </div>
+
+            <Link href="/" className="font-bold bg-[#093a5b] mx-auto w-[150px] mb-5 mt-3 p-3 rounded flex items-center justify-center">Go Back</Link>
         </div>
     );
 }
