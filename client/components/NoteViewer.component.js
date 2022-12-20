@@ -37,6 +37,15 @@ function NoteViewerComponent() {
         localStorage.setItem('notes', JSON.stringify(newNotes));
     }
 
+    const download = (note) => {
+        const blob = new Blob([note.content], {type: "text/plain"});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = "note.md";
+        link.href = url;
+        link.click();
+    }
+
     return(
         <>
             {notes.length === 0 && (
@@ -54,11 +63,27 @@ function NoteViewerComponent() {
                                 <h1 className="">Note:</h1>
 
                                 <div className="absolute right-0">
-                                    <button disabled={true} onClick={() => editNote(index)}
+                                    <button disabled={true} onClick={() => ''} // editNote(index)
                                             className="disabled:bg-opacity-50 disabled:cursor-not-allowed mr-2 px-4 bg-green-600 p-1 font-bold rounded">Edit
                                     </button>
+
                                     <button onClick={() => deleteNote(index)}
-                                            className="bg-red-500 px-3 p-1 font-bold rounded">Delete
+                                            className="bg-red-500 mr-2 px-3 p-1 font-bold rounded">Delete
+                                    </button>
+
+                                    <button type="button"
+                                            onClick={() => download(note)}
+                                            className="bg-blue-500 px-3 bg-green-600 p-1 font-bold rounded">
+                                        Download
+                                        {/*
+                                        <svg aria-hidden="true" className="flex justify-center items-center w-3.5 h-3.5" fill="currentColor"
+                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fillRule="evenodd"
+                                                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                                                  clipRule="evenodd"></path>
+                                        </svg>
+                                        */}
+                                        <span className="sr-only">Download</span>
                                     </button>
                                 </div>
                             </div>

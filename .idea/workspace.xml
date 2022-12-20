@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="" />
+    <list default="true" id="88e6f6d5-276c-4629-8ba3-02f87fa907ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/MarkdownEditor.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/NoteViewer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/NoteViewer.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +45,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yusu/Desktop/xxx/software tools/tooly-main/client/components&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yusu/Documents/Projects/tooly-main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -105,6 +110,8 @@
       <workItem from="1671276032325" duration="629000" />
       <workItem from="1671289628885" duration="2914000" />
       <workItem from="1671381798151" duration="94000" />
+      <workItem from="1671484847388" duration="142000" />
+      <workItem from="1671540787144" duration="1257000" />
     </task>
     <servers />
   </component>
